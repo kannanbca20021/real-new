@@ -123,14 +123,29 @@
             <section class="tp-checkout-area pt-200 pb-120">
                <div class="container">
                   <div class="row">
-                     <div class="col-lg-7">
+                     <div class="col-xxl-8 col-xl-8 col-lg-8">
                         <div class="tp-checkout-bill-area">
-                           <h3 class="tp-checkout-bill-title">Billing Details</h3>
+                           <h3 class="tp-checkout-bill-title">Fill the form</h3>
 
                            <div class="tp-checkout-bill-form">
                               <form action="#">
                                  <div class="tp-checkout-bill-inner">
                                     <div class="row">
+                                       <div class="col-md-12">
+                                          <div class="tp-checkout-input">
+                                             <label for="date">Select a Date <span>*</span></label>
+                                             <input type="date" id="date" placeholder="Full Name">
+                                          </div>
+                                      </div>
+                                      <div class="col-md-12">
+                                       <div class="time-slots" id="time-slots" style="display:none;">
+                                          <p>Select a Time Slot:</p>
+                                          <label class="time-slot"><input type="radio" name="time-slot" value="6:30-7:30"> 6:30 - 7:30</label>
+                                          <label class="time-slot"><input type="radio" name="time-slot" value="7:30-8:30"> 7:30 - 8:30</label>
+                                          <label class="time-slot"><input type="radio" name="time-slot" value="8:30-9:30"> 8:30 - 9:30</label>
+                                          <label class="time-slot"><input type="radio" name="time-slot" value="9:30-10:30"> 9:30 - 10:30</label>
+                                       </div>
+                                      </div>
                                        <div class="col-md-12">
                                           <div class="tp-checkout-input">
                                              <label>Full Name <span>*</span></label>
@@ -139,28 +154,62 @@
                                        </div>
                                        <div class="col-md-12">
                                           <div class="tp-checkout-input">
-                                             <label>Email</label>
+                                             <label>Email <span>*</span></label>
                                              <input type="text" placeholder="yourname@email.com">
                                           </div>
                                        </div>
                                        <div class="col-md-12">
                                           <div class="tp-checkout-input">
-                                             <label>Mobile Number</label>
-                                             <input type="text" placeholder="Mobile Number">
+                                             <label>Youtube Channel Link <span>*</span></label>
+                                             <input type="text" placeholder="Channel Link">
                                           </div>
                                        </div>
                                        <div class="col-md-12">
                                           <div class="tp-checkout-input">
-                                             <label>Order notes (optional)</label>
-                                             <textarea placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                             <label>Summary <span>*</span></label>
+                                             <input type="text" placeholder="Summary">
                                           </div>
                                        </div>
+                                    
                                        <div class="tp-checkout-btn-wrapper">
-                                          <a href="#" class="tp-btn-cart sm w-100">Place Order</a>
+                                          <a href="#" class="tp-btn-cart sm w-100">Schedule Event</a>
                                        </div>
                                     </div>
                                  </div>
                               </form>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xxl-4 col-xl-4 col-lg-4">
+                        <div class="sidebar__wrapper">
+                           <div class="sidebar__widget mb-45">
+                              <div class="sidebar__author text-center">
+                                 <div class="sidebar__author-thumb">
+                                    <img src="assets/img/logo.png" alt="" class="w-25 h-25">
+                                 </div>
+                                 <div class="sidebar__author-content">
+                                    <h4 class="sidebar__author-title">Real Creators</h4>
+                                    <h2 class="sidebar__author-title">Consulting Call</h2>
+                                    <p>Our goal is to help you get 2-5x more views on YouTube in the next 90 days.</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="sidebar__widget mb-65">
+                              <div class="sidebar__widget-content">
+                                 <div class="sidebar__banner-img">
+                                    <img src="assets/img/inner-blog/blog-sidebar/banner/banner.jpg" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="sidebar__widget mb-65">
+                              <h3 class="sidebar__widget-title">Follow Us</h3>
+                              <div class="sidebar__widget-content">
+                                 <div class="sidebar__social">
+                                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                 </div>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -311,7 +360,18 @@
       </div>
    </div>
    
+   <script>
+      const dateInput = document.getElementById('date');
+      const timeSlots = document.getElementById('time-slots');
 
+      dateInput.addEventListener('change', function() {
+          if (this.value) {
+              timeSlots.style.display = 'block';
+          } else {
+              timeSlots.style.display = 'none';
+          }
+      });
+  </script>
 
    <!-- JS here -->
    <script src="assets/js/vendor/jquery.js"></script>
